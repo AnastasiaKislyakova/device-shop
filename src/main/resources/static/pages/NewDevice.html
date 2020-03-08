@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Shop</title>
+    <meta charset="utf-8" http-equiv="Content-Type">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="../js/device.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div>
+			<a href="../index.html" class="text-info">На главную</a>
+		</div>
+		<div>
+			Тип устройства: <br>
+			<select id="deviceType">
+				  <option value="Laptop">Laptop</option>
+				  <option value="Smartphone">Smartphone</option>
+				  <option value="Smart watches">Smart watches</option>
+				  <option value="Tablet">Tablet</option>
+				</select><br>
+			Модель: <br>
+			<input type="text" name="modelName" id="modelName" ><br>
+			Производитель: <br>
+			<input type="text" name="manufacturer" id="manufacturer" ><br>
+			Дата выпуска: <br>
+			<input type="date" name="manufactureDate" id="manufactureDate" ><br>
+			Цвет: <br>
+	   		<p>Укажите цвет: <input type="color" name="color" id="color" value="#ff0000">
+	   		<button onclick="checkColor()">Выбрать</button></p>
+			Название цвета: <br>
+			<input type="text" name="colorName" id="colorName"><br>
+			Цена: <br>
+			<input type="number" name="price" id="price" min="0.00" step="0.10"><br>
+			<button onclick="createDevice()">Добавить новое устройство</button> <br>
+			<br>
+			<p><textarea rows="10" name="response" id="responsePost" cols="40"></textarea></p>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Shop</title>
+    <meta charset="utf-8" http-equiv="Content-Type">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+	<div class="col-11 m-auto">
+		<div>
+			<a href="../index.html" class="text-info">На главную</a>
+		</div>
+		<div class="row">
+			<div class="col-3 m-1">
+				<h5>Параметры поиска:</h5>
+				Тип устройства: <br>
+				<select id="deviceTypeParam">
+					  <option value="">Любое</option>
+					  <option value="Laptop">Laptop</option>
+					  <option value="Smartphone">Smartphone</option>
+					  <option value="Smart watches">Smart watches</option>
+					  <option value="Tablet">Tablet</option>
+					</select><br>
+				Модель: <br>
+				<input type="text" name="modelName" id="modelNameParam" ><br>
+				Производитель: <br>
+				<input type="text" name="manufacturer" id="manufacturerParam" ><br>
+				Дата выпуска: <br>
+				<input type="date" name="manufactureDate" id="manufactureDateParam" ><br>
+				Дата выпуска в период: <br>
+				с <input type="date" name="manufactureDate" id="manufactureDateFrom"> <br> 
+				по <input type="date" name="manufactureDate" id="manufactureDateTo"> <br>
+				Цвет: <br>
+				<input type="checkbox" name="colorRB" id="colorRB">Фильтровать по цвету <br>
+		   		<p>Укажите цвет: <input type="color" name="color" id="color" value="#ff0000">
+		   		<button onclick="checkColor()">Выбрать</button></p>
+				Название цвета: <br>
+				<input type="text" name="colorName" id="colorName"><br>
+				Цена: <br>
+				<input type="number" name="price" id="priceParam" min="0.00" step="0.10"><br>
+				Цена в диапазоне: <br>
+				от <input type="number" name="price" id="priceFrom" min="0.00" step="0.10"> <br> 
+				по <input type="number" name="price" id="priceTo" min="0.00" step="0.10"> <br>
+				
+				
+			</div>
+			<div class="col-5 m-1">
+				<button onclick="getDevices()">Вывести все устройства</button><br>
+				<button onclick="getDeviceById()">Вывести устройство по id</button> <br>
+				id: <input type="number" name="deviceId" id="deviceId" value=1 min="1"><br>
+				<textarea rows="25" cols="40" name="response" id="responseGet"></textarea>
+			</div>
+			<div class="col-3 m-1">
+				<h5>Параметры отображения:</h5>
+				Количество элементов на странице: <br>
+				<input type="number" name="pageItems" id="pageItems" value=10 min="1" ><br>
+				Номер страницы:  <br>
+				<input type="number" name="page" id="page" value=1 min="1" max="1000"> <br>
+				<h5>Параметры сортировки:</h5> 
+				<select id="sortBy">
+				  <option value="deviceType">По типу устройства</option>
+				  <option value="modelName">По названию модели</option>
+				  <option value="manufacturer">По производителю</option>
+				  <option value="manufactureDate">По дате выпуска</option>
+				  <option value="colorName">По названию цвета</option>
+				  <option value="colorRGB">По RGB</option>
+				  <option value="price">По цене</option>
+				</select><br>
+				<input type="radio" name="order" id="asc">ASC
+				<input type="radio" name="order" id="desc">DESC
+				<br>
+				<button onclick="addSorting()">Добавить в параметры сортировки</button> <br> <br>
+				<textarea rows="5" cols="30" name="sortParams" id="sortParams"></textarea> <br>
+				<button onclick="cleanSorting()">Сбросить параметры сортировки</button> <br>
+			</div>
+		</div>
+		</div>
+	</div>
+</body>
+<script src="../js/device.js"></script>
+</html>

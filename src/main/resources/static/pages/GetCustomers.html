@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Shop</title>
+    <meta charset="utf-8" http-equiv="Content-Type">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+	<div class="col-11 m-auto">
+		<div>
+			<a href="../index.html" class="text-info">На главную</a>
+		</div>
+		<div class="row">
+			<div class="col-3 m-1">
+				<h5>Параметры поиска:</h5>
+				Фамилия: <br>
+				<input type="text" name="lastName" id="lastNameParam"><br>
+				Имя: <br>
+				<input type="text" name="firstName" id="firstNameParam"><br>
+				Отчество: <br>
+				<input type="text" name="middleName" id="middleNameParam"><br>
+				Дата рождения: <br>
+				<input type="date" name="birthdate" id="birthdateParam"><br>
+				Дата рождения в период: <br>
+				с <input type="date" name="birthDate" id="birthdateFrom"> <br> 
+				по <input type="date" name="birthDate" id="birthdateTo"> <br>
+			</div>
+			<div class="col-5 m-1">
+				<button onclick="getCustomers()">Вывести всех клиентов</button><br>
+				<button onclick="getCustomerById()">Вывести клиента по id</button> <br>
+				id: <input type="number" name="customerId" id="customerId" value=1 min="1"><br>
+				<textarea rows="25" cols="40" name="response" id="responseGet"></textarea>
+			</div>
+			<div class="col-3 m-1">
+				<h5>Параметры отображения:</h5>
+				Количество элементов на странице: <br>
+				<input type="number" name="pageItems" id="pageItems" value=10 min="1" ><br>
+				Номер страницы:  <br>
+				<input type="number" name="page" id="page" value=1 min="1" max="1000"> <br>
+				<h5>Параметры сортировки:</h5> 
+				<select id="sortBy">
+				  <option value="firstName">По имени</option>
+				  <option value="lastName">По фамилии</option>
+				  <option value="middleName">По отчеству</option>
+				  <option value="birthdate">По дате рождения</option>
+				</select><br>
+				<input type="radio" name="order" id="asc">ASC
+				<input type="radio" name="order" id="desc">DESC
+				<br>
+				<button onclick="addSorting()">Добавить в параметры сортировки</button> <br> <br>
+				<textarea rows="5" cols="30" name="sortParams" id="sortParams"></textarea> <br>
+				<button onclick="cleanSorting()">Сбросить параметры сортировки</button> <br>
+			</div>
+		</div>
+		</div>
+	</div>
+</body>
+<script src="../js/customer.js"></script>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Shop</title>
+    <meta charset="utf-8" http-equiv="Content-Type">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+	<div class="col-11 m-auto">
+		<div>
+			<a href="../index.html" class="text-info">На главную</a>
+		</div>
+		<div class="row">
+			<div class="col-3 m-1">
+				<h5>Параметры поиска:</h5>
+				Id покупателя: <br>
+				<input type="number" name="customerId" id="customerIdParam" min="1"><br>
+				Дата и время покупки: <br>
+				<input type="datetime-local" name="purchaseDateTime" id="purchaseDateTimeParam" ><br>
+				Дата и время покупки в период: <br>
+				с <input type="datetime-local" name="purchaseDateTimeFrom" id="purchaseDateTimeFrom"> <br> 
+				по <input type="datetime-local" name="purchaseDateTimeTo" id="purchaseDateTimeTo"> <br>
+				Сумма покупки: <br>
+				<input type="number" name="totalPrice" id="totalPriceParam" min="0.00" step="0.10"><br>
+				Сумма в диапазоне: <br>
+				от <input type="number" name="totalPrice" id="totalPriceFrom" min="0.00" step="0.10"> <br> 
+				по <input type="number" name="totalPrice" id="totalPriceTo" min="0.00" step="0.10"> <br>
+				
+			</div>
+			<div class="col-6 m-1">
+				<button onclick="getBills()">Вывести все чеки</button><br>
+				<button onclick="getBillById()">Вывести чек по id</button> <br>
+				id: <input type="number" name="billId" id="billId" value=1 min="1"><br>
+				<textarea rows="25" cols="70" name="response" id="responseGet"></textarea>
+			</div>
+			<div class="col-2 m-1">
+				<h5>Параметры отображения:</h5>
+				Количество элементов на странице: <br>
+				<input type="number" name="pageItems" id="pageItems" value=10 min="1" ><br>
+				Номер страницы:  <br>
+				<input type="number" name="page" id="page" value=1 min="1" max="1000"> <br>
+				<h5>Параметры сортировки:</h5> 
+				<select id="sortBy">
+				  <option value="customerId">По id покупателя</option>
+				  <option value="totalPrice">По сумме покупки</option>
+				  <option value="purchaseDateTime">По дате и времени покупки</option>
+				</select><br>
+				<input type="radio" name="order" id="asc">ASC
+				<input type="radio" name="order" id="desc">DESC
+				<br>
+				<button onclick="addSorting()">Добавить в параметры сортировки</button> <br> <br>
+				<textarea rows="5" cols="30" name="sortParams" id="sortParams"></textarea> <br>
+				<button onclick="cleanSorting()">Сбросить параметры сортировки</button> <br>
+			</div>
+		</div>
+		</div>
+	</div>
+</body>
+<script src="../js/bill.js"></script>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Shop</title>
+    <meta charset="utf-8" http-equiv="Content-Type">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div>
+			<a href="../index.html" class="text-info">На главную</a>
+		</div>
+		<div>
+			Id покупателя: <br>
+			<input type="number" name="customerId" id="customerId" value=1 min="1"><br>
+			<div id="billItems">
+				<div id="div1">
+					Id устройства: <input type="number" name="deviceId" id="deviceId1" value=1 min="1">
+					Количество: <input type="number" name="quantity" id="quantity1" value=1 min="1">
+					Цена: <input type="number" name="price" id="price1" min="0.00" step="0.10"> 
+					<button onclick="deleteBillItem('div1')">х</button> <br>
+				</div>
+			</div>
+			<button onclick="addBillItem()">+</button> <br>
+			<button onclick="createBill()">Добавить новый чек</button> <br>
+			<br>
+			<p><textarea rows="10" name="response" id="responsePost" cols="60"></textarea></p>
+		</div>
+	</div>
+</body>
+<script src="../js/bill.js"></script>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Shop</title>
+    <meta charset="utf-8" http-equiv="Content-Type">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="../js/customer.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div>
+			<a href="../index.html" class="text-info">На главную</a>
+		</div>
+		<div>
+			Фамилия: <br>
+			<input type="text" name="lastName" id="lastName" ><br>
+			Имя: <br>
+			<input type="text" name="firstName" id="firstName" ><br>
+			Отчество: <br>
+			<input type="text" name="middleName" id="middleName" ><br>
+			Дата рождения: <br>
+			<input type="date" name="birthdate" id="birthdate" >
+			<br>
+			<button onclick="createCustomer()">Добавить нового клиента</button> <br>
+			<br>
+			<p><textarea rows="10" name="response" id="responsePost" cols="30"></textarea></p>
+		</div>
+	</div>
+</body>
+</html>
