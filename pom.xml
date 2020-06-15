@@ -18,7 +18,7 @@
         <slf4j.version>1.7.26</slf4j.version>
         <jackson.version>2.10.3</jackson.version>
         <jakarta.version>2.1.5</jakarta.version>
-        <hibernate.version>5.2.4.Final</hibernate.version>
+        <hibernate.version>5.3.5.Final</hibernate.version>
         <javax.el.version>2.2.4</javax.el.version>
         <junit.version>5.4.2</junit.version>
 
